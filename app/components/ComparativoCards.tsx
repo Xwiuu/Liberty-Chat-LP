@@ -29,7 +29,7 @@ export default function ComparisonVS() {
   ]
 
   return (
-    <section className="relative w-full bg-black py-40 px-6 flex flex-col items-center border-t border-zinc-900 z-10">
+    <section id="comparativocards" className="relative w-full bg-black py-40 px-6 flex flex-col items-center border-t border-zinc-900 z-10">
       
       <div className="w-full max-w-6xl">
         
@@ -76,7 +76,7 @@ export default function ComparisonVS() {
 
               {/* Liberty Side */}
               <div className="flex flex-col justify-center md:pl-12 relative">
-                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#b3ff00] opacity-0 group-hover:opacity-100 transition-opacity hidden md:block" />
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#b3ff00] opacity-0 group-hover:opacity-100 transition-opacity hidden md:block" />
                 <span className="text-[#b3ff00] text-[10px] font-mono uppercase mb-2 tracking-widest font-bold">LibertyChat</span>
                 <p className="text-white text-xl md:text-2xl font-bold tracking-tight">
                   {item.liberty}

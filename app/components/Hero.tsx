@@ -40,6 +40,7 @@ export default function Hero() {
 
   return (
     <section
+      id="hero"
       ref={containerRef}
       className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden"
     >
@@ -53,7 +54,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center">
         <h1
           ref={titleRef}
-          className="text-[15vw] sm:text-[12vw] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-600 uppercase leading-none"
+          className="text-[15vw] sm:text-[12vw] font-black tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white to-zinc-600 uppercase leading-none"
           style={{ clipPath: "inset(0 0 0 0)" }} // Estado final do clip-path
         >
           Liberty

@@ -33,7 +33,7 @@ export default function Diferencial() {
   }, [])
 
   return (
-    <section className="relative w-full bg-black py-40 flex flex-col items-center justify-center border-t border-zinc-900 z-10 overflow-hidden">
+    <section id="diferencial" className="relative w-full bg-black py-40 flex flex-col items-center justify-center border-t border-zinc-900 z-10 overflow-hidden">
       
       <div className="w-full max-w-6xl px-6">
         
@@ -53,7 +53,7 @@ export default function Diferencial() {
           ref={containerRef}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
-          className="relative w-full h-[500px] rounded-3xl border border-zinc-900 bg-zinc-950 overflow-hidden cursor-none shadow-2xl"
+          className="relative w-full h-125 rounded-3xl border border-zinc-900 bg-zinc-950 overflow-hidden cursor-none shadow-2xl"
         >
           
           {/* CAMADA 1: O MUNDO CENSURADO (Texto borrado e cinza) */}

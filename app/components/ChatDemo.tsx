@@ -29,7 +29,7 @@ export default function ChatDemo() {
   }
 
   return (
-    <section className="relative flex w-full flex-col items-center justify-center py-32 px-4 z-10">
+    <section id="chatdemo" className="relative flex w-full flex-col items-center justify-center py-32 px-4 z-10">
       
       <div className="mb-12 text-center">
         <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white mb-4">
@@ -42,7 +42,7 @@ export default function ChatDemo() {
       <div className="w-full max-w-3xl rounded-3xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-2xl p-4 md:p-8 shadow-2xl shadow-black/50">
         
         {/* Histórico de Mensagens */}
-        <div className="flex flex-col space-y-6 mb-8 h-[300px] overflow-y-auto scrollbar-hide">
+        <div className="flex flex-col space-y-6 mb-8 h-75 overflow-y-auto scrollbar-hide">
           {messages.map((msg, i) => (
             <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
               <div 

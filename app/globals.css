@@ -103,3 +103,12 @@ html.lenis, html.lenis body {
   animation-duration: 100s; 
   cursor: grab;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ajuste para o scroll não parar embaixo da Navbar */
+section {
+  scroll-margin-top: 100px; 
+}

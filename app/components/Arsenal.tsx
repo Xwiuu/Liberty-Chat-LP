@@ -23,7 +23,7 @@ export default function Arsenal() {
   const duplicatedRow2 = [...row2, ...row2, ...row2, ...row2];
 
   return (
-    <section className="relative w-full bg-[#000000] py-32 flex flex-col items-center justify-center overflow-hidden border-t border-zinc-900 z-10">
+    <section id="arsenal" className="relative w-full bg-[#000000] py-32 flex flex-col items-center justify-center overflow-hidden border-t border-zinc-900 z-10">
       {/* Cabeçalho Limpo - Pique Apple */}
       <div className="flex flex-col items-center mb-20 px-4 text-center">
         <span className="text-zinc-500 text-xs font-medium tracking-[0.3em] uppercase mb-4">

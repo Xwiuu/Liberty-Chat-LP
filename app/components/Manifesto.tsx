@@ -2,7 +2,7 @@
 
 export default function Manifesto() {
   return (
-    <section className="relative w-full bg-[#030303] flex justify-center py-32 px-6 md:px-12 border-t border-zinc-900 z-10">
+    <section id="manifesto" className="relative w-full bg-[#030303] flex justify-center py-32 px-6 md:px-12 border-t border-zinc-900 z-10">
       <div className="w-full max-w-4xl flex flex-col items-start">
         {/* Tag / Label superior */}
         <div className="flex items-center gap-3 mb-12">
@@ -36,7 +36,7 @@ export default function Manifesto() {
         {/* Bloco de Ruptura (Inspirado na sua referência) */}
         <div className="relative pl-8 md:pl-12 py-4 mb-20">
           {/* Linha vertical laranja */}
-          <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-linear-to-b from-[#ff4500] to-transparent" />
+          <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-linear-to-b from-[#ff4500] to-transparent" />
 
           <div className="space-y-8">
             <p className="text-lg md:text-xl text-zinc-300 font-light leading-relaxed">

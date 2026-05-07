@@ -6,7 +6,7 @@ export default function Manifesto() {
   const uncensoredDots = 2; // Apenas 1%
 
   return (
-    <section className="relative flex w-full flex-col items-center justify-center py-32 px-4 bg-black z-10 border-t border-zinc-900">
+    <section id="perspectiva" className="relative flex w-full flex-col items-center justify-center py-32 px-4 bg-black z-10 border-t border-zinc-900">
       
       <div className="flex items-center gap-2 mb-6 text-red-500 text-sm font-bold tracking-widest uppercase">
         <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
