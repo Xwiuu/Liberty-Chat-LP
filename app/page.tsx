@@ -1,33 +1,59 @@
-import Navbar from "./components/Navbar"; // 1. Importa a Navbar
+'use client'
+
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ChatDemo from "./components/ChatDemo";
-import Perspectiva from "./components/Perspectiva";
-import Manifesto from "./components/Manifesto";
-import Arsenal from "./components/Arsenal";
-import Diferencial from "./components/Diferencial";
-import ComparativoCards from "./components/ComparativoCards";
+import Amostras from "./components/Amostras";
+import Metodos from "./components/Metodos";
+import ComparisonVS from "./components/ComparisonVS";
 import SocialProof from "./components/SocialProof";
 import Pricing from "./components/Pricing";
+import Limitacoes from "./components/Limitacoes";
 import FinalBreach from "./components/FinalBreach";
 import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Navbar /> {/* 2. Coloca ela aqui, fora do main para organização */}
+      {/* Navbar flutuante com física magnética */}
+      <Navbar /> 
       
-      <main className="relative flex flex-col items-center">
+      <main className="relative flex flex-col items-center bg-black overflow-x-hidden">
+        
+        {/* 01. IMPACTO: Razão. Sem Filtros. */}
         <Hero />
-        <Manifesto />
-        <Perspectiva /> 
-        <ChatDemo />
-        <Arsenal />
-        <Diferencial />
-        <ComparativoCards />
-        <Pricing />
-        <SocialProof />
+
+        {/* 02. PROVA: Interface de Amostras (Playground) */}
+        <Amostras />
+
+        {/* 03. ARQUITETURA: Fluxograma de Métodos */}
+        <div id="arsenal">
+          <Metodos />
+        </div>
+
+        {/* 04. AUDITORIA: Comparativo de Kernel */}
+        <div id="comparativo">
+          <ComparisonVS />
+        </div>
+
+        {/* 05. FIELD REPORTS: Depoimentos Técnicos */}
+        <div id="social">
+          <SocialProof />
+        </div>
+
+        {/* 06. ALLOCATION: Escolha de Capacidade (Pricing) */}
+        <div id="pricing">
+          <Pricing />
+        </div>
+
+        {/* 07. TRANSPARÊNCIA: Limitações Operacionais */}
+        <Limitacoes />
+
+        {/* 08. PROTOCOLO FINAL: CTA de Acesso */}
         <FinalBreach />
+
+        {/* 09. TERMINAL: Metadados de Encerramento */}
         <Footer />
+
       </main>
     </>
   );

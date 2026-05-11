@@ -1,72 +1,53 @@
-"use client";
+'use client'
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { motion } from 'framer-motion'
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-
-  useEffect(() => {
-    // Usamos o gsap.context para o React limpar a animação certinho quando o componente desmontar
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-
-      // A mágica do texto colossal surgindo (Clip-path reveal)
-      tl.from(titleRef.current, {
-        y: 120, // Começa mais pra baixo
-        opacity: 0,
-        clipPath: "inset(100% 0 0 0)", // Esconde a parte de baixo
-        duration: 1.8,
-        ease: "power4.out",
-        delay: 0.2,
-      })
-        // O subtítulo entra logo em seguida com um fade suave
-        .from(
-          subtitleRef.current,
-          {
-            y: 30,
-            opacity: 0,
-            duration: 1.2,
-            ease: "power3.out",
-          },
-          "-=1.2",
-        ); // Inicia 1.2s ANTES da animação de cima terminar (cria fluidez)
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section
-      id="hero"
-      ref={containerRef}
-      className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden"
-    >
-      {/* Placeholder pro nosso fundo 3D Magnético (A Águia vai entrar aqui) */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-        {/* Um glow radial sutil pra dar profundidade enquanto o 3D não vem */}
-        <div className="h-[50vh] w-[50vh] rounded-full bg-zinc-400/5 blur-[120px]" />
+    <section className="relative w-full h-[85vh] flex flex-col items-center justify-center bg-black overflow-hidden px-6 text-center">
+      
+      {/* Luz de fundo "Studio" (Extremamente sutil) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-250 h-150 bg-zinc-900/15 blur-[160px] rounded-full pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }} // Curva de animação da Apple
+        >
+          {/* Data ou Badge Técnico */}
+          <span className="text-zinc-500 font-mono text-[10px] tracking-[0.4em] uppercase mb-10 block">
+            Protocolo de Inferência // Build 3.0.4
+          </span>
+          
+          {/* Título Estilo Apple (Menor, Médio Peso, Elegante) */}
+          <h1 className="text-4xl md:text-6xl font-medium text-zinc-100 tracking-tight leading-[1.1] mb-12">
+            LibertyChat. <br /> 
+            <span className="text-zinc-600 font-light italic">Sem camadas de conformidade.</span>
+          </h1>
+
+          {/* Subtexto Editorial */}
+          <p className="text-zinc-500 max-w-xl mx-auto text-base md:text-lg font-light leading-relaxed mb-16">
+            Projetada para operar onde os filtros convencionais falham. 
+            Experimente a inteligência bruta em seu estado original.
+          </p>
+
+          {/* CTAs Limpos */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <button className="px-10 py-3.5 bg-white text-black font-semibold text-[11px] uppercase tracking-widest rounded-full hover:bg-zinc-200 transition-all duration-500">
+              Acessar Kernel ↗
+            </button>
+            <button className="px-4 py-2 text-zinc-400 hover:text-white font-medium text-[11px] uppercase tracking-widest transition-colors flex items-center gap-2">
+              Ver especificações técnicas <span>›</span>
+            </button>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Camada de Texto */}
-      <div className="relative z-10 flex flex-col items-center text-center">
-        <h1
-          ref={titleRef}
-          className="text-[15vw] sm:text-[12vw] font-black tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white to-zinc-600 uppercase leading-none"
-          style={{ clipPath: "inset(0 0 0 0)" }} // Estado final do clip-path
-        >
-          Liberty
-        </h1>
-
-        <p
-          ref={subtitleRef}
-          className="mt-4 sm:mt-8 text-lg sm:text-2xl font-light tracking-wide text-zinc-400 max-w-2xl px-4"
-        >
-          A inteligência que não filtra suas ideias.
-        </p>
+      {/* Indicador de Scroll Minimalista */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-20">
+        <div className="w-px h-10 bg-zinc-500" />
       </div>
     </section>
-  );
+  )
 }
